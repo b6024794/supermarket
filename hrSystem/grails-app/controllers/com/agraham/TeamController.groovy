@@ -2,5 +2,5 @@ package com.agraham
 
 class TeamController {
 
-    def index() { }
+    def scaffold = Team
 }

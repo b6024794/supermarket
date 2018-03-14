@@ -2,5 +2,5 @@ package com.agraham
 
 class EmployeeController {
 
-    def index() { }
+    def scaffold = Employee
 }
