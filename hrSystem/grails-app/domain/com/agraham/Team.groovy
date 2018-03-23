@@ -5,6 +5,10 @@ class Team {
 	int noOfEmployees
 	String descript
 	String sectionName
+	Team_leader team_leader
+	Shift shifts
+	
+	static hasMany =[task:Task, employees:Employee]
 
     static constraints = {
 
@@ -12,6 +16,8 @@ class Team {
 	noOfEmployees blank: false, nullable: false
 	sectionName blank: false, nullable: false
 	descript blank: false, nullable: false, widget:'textarea'
+	employees blank: false, nullable: false
+	task nullable:true
 
 
 	

@@ -2,5 +2,5 @@ package com.agraham
 
 class ShiftController {
 
-    def index() { }
+    def scaffold = Shift
 }

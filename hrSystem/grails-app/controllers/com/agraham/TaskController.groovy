@@ -2,5 +2,5 @@ package com.agraham
 
 class TaskController {
 
-    def index() { }
+    def scaffold = Task
 }
