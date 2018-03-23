@@ -16,8 +16,8 @@ class Team {
 	noOfEmployees blank: false, nullable: false
 	sectionName blank: false, nullable: false
 	descript blank: false, nullable: false, widget:'textarea'
-	employees blank: false, nullable: false
-	task nullable:true
+	employees blank: true, nullable: true
+	task blank: true, nullable: true
 
 
 	

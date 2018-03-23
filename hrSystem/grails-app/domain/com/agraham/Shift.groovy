@@ -6,7 +6,6 @@ class Shift {
 	String daysOfWeek
 	int numberOfHours
 	String startingTime
-	
 	static hasMany = [tasks:Task, employees:Employee, teams:Team]
 	static belongsTo = [Task]
 
@@ -15,8 +14,9 @@ class Shift {
 	daysOfWeek blank: false, nullable: false
 	numberOfHours blank: false, nullable: false, max: 13
 	startingTime blank: false, nullable: false
-	tasks nullable: true
-	employees blank: false, nullable: false
-	teams blank: false, nullable: false
+	
+	tasks nullable: true, blank: true
+	employees nullable: true, blank: true
+	teams nullable: true, blank: true
     }
 }

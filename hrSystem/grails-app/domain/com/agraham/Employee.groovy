@@ -27,8 +27,12 @@ class Employee {
 	taxCode blank: false, nullable: false, unique:true
 	contract blank: false, nullable: false
 	employeeID blank: false, nullable: false, unique: true
-	shift blank: false, nullable: false
-	teams nullable: true
+
+
+	shift blank: true, nullable: true
+	teams nullable: true, blank: true
+	tasks nullable: true, blank: true
+	
 
 
     }

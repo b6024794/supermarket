@@ -24,6 +24,8 @@ class Team_leader {
 	employeeEmail blank: false, nullable: false
 	employeeID blank: false, nullable: false
 	password blank: false, nullable: false
-	employees blank: false, nullable: false
+
+	team  blank: true, nullable: true
+	employees blank: true, nullable: true
     }
 }

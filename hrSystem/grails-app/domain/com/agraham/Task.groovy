@@ -20,7 +20,8 @@ class Task {
 	timeRequired blank: false, nullable: false
 	description blank: false, nullable: false
 	taskCompleted blank: false, nullable: false
-	shifts blank: false, nullable: false
-	employees blank: false, nullable: false
+	
+	shifts blank: true, nullable: true
+	employees blank: true, nullable: true
     }
 }
