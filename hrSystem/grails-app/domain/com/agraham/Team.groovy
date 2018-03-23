@@ -7,7 +7,14 @@ class Team {
 	String sectionName
 	Team_leader team_leader
 	Shift shifts
+
+	String toString(){
 	
+	return teamName	
+	
+	}	
+
+
 	static hasMany =[task:Task, employees:Employee]
 
     static constraints = {

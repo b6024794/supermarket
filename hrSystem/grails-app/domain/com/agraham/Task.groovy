@@ -10,6 +10,13 @@ class Task {
 	String department
 	Boolean taskCompleted
 
+
+	String toString(){
+	
+	return taskName	
+	
+	}
+
 	static hasMany = [shifts:Shift,employees:Employee]
 
     static constraints = {

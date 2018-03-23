@@ -11,6 +11,12 @@ class Team_leader {
 	String password
 	Manager manager
 	Team team
+
+	String toString(){
+	
+	return fullName	
+	
+	}
 	
 	static hasMany = [employees:Employee]
 

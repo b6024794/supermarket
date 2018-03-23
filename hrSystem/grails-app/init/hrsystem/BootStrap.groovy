@@ -155,6 +155,9 @@ def electronics = new Team(
 	).save()	
 
 //Adding detials to relationships
+
+	electronics.addToEmployees(Sara)
+	electronics.addToEmployees(Keith)
 	//steve.addToEmployees(Sara)
 	//steve.addToEmployees(Keith)
 

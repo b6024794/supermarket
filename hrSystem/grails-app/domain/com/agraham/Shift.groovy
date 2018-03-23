@@ -9,6 +9,15 @@ class Shift {
 	static hasMany = [tasks:Task, employees:Employee, teams:Team]
 	static belongsTo = [Task]
 
+	String toString(){
+	
+	return timeOfDay
+	
+	}
+
+
+
+
     static constraints = {
 	timeOfDay blank: false, nullable: false
 	daysOfWeek blank: false, nullable: false

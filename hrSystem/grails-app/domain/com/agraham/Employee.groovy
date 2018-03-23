@@ -13,6 +13,12 @@ class Employee {
 	Shift shift
 	Manager manager
 
+	String toString(){
+	
+	return fullName	
+	
+	}
+
 	static hasMany = [tasks:Task, teams:Team]
 	static belongsTo = [Team]
 
