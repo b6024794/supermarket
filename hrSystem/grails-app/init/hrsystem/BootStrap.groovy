@@ -4,6 +4,28 @@ class BootStrap {
 
     def init = { servletContext ->
 
+//creating new shifts
+
+def eveningShift = new Shift(
+
+	timeOfDay: 'Evening',
+	daysOfWeek: 'Monday,Wednesday,Friday',
+	numberOfHours: 6,
+	startingTime: '4:00PM'
+
+	).save()
+
+def morningShift = new Shift(
+
+	timeOfDay: 'morning',
+	daysOfWeek: 'Tuesday,Wednesday,Thursday',
+	numberOfHours: 9,
+	startingTime: '6:00AM'
+
+	).save()
+
+
+
 //creating managers
 
 def jack = new Manager(
@@ -37,7 +59,9 @@ def Sara = new Employee(
 	taxCode:'ADS3',
 	contract:'Part-Time',
 	employeeID: 4,
+	shift: eveningShift,
 	manager: steve
+	
 	).save()
 
 def Keith = new Employee(
@@ -48,9 +72,29 @@ def Keith = new Employee(
 	dateEmployed: new Date ('07/07/2012'),
 	taxCode:'ADS4',
 	contract:'Part-Time',
-	employeeID: 5,
+	employeeID: 5,	
+	shift: morningShift,
 	manager: steve
+
 	).save()
+
+def Andy = new Employee(
+	fullName: 'Andrew Graham',
+	dateOfBirth: new Date ('13/06/1998'),
+	residence: '17 High Street',
+	hourlyRate: 9.80,
+	dateEmployed: new Date ('10/03/2012'),
+	taxCode:'ADS5',
+	contract:'Full-Time',
+	employeeID: 6,	
+	shift: eveningShift,
+	manager: jack
+
+	).save()
+
+
+
+
 
 //creating tasks
 
@@ -108,26 +152,6 @@ def Leader2 = new Team_leader(
 
 	).save()
 
-//creating new shifts
-
-def eveningShift = new Shift(
-
-	timeOfDay: 'Evening',
-	daysOfWeek: 'Monday,Wednesday,Friday',
-	numberOfHours: 6,
-	startingTime: '4:00PM'
-
-	).save()
-
-def morningShift = new Shift(
-
-	timeOfDay: 'morning',
-	daysOfWeek: 'Tuesday,Wednesday,Thursday',
-	numberOfHours: 9,
-	startingTime: '6:00AM'
-
-	).save()
-
 //creating new teams
 
 def cleaners = new Team(
@@ -156,10 +180,51 @@ def electronics = new Team(
 
 //Adding detials to relationships
 
+	//adding employee to teams
 	electronics.addToEmployees(Sara)
+	electronics.addToEmployees(Keith)	
+	cleaners.addToEmployees(Andy)
 	electronics.addToEmployees(Keith)
-	//steve.addToEmployees(Sara)
-	//steve.addToEmployees(Keith)
+	
+	//add tasks to teams
+
+	cleanShop.addToTeams(electronics)
+	cleanShop.addToTeams(cleaners)
+	stackShelves.addToTeams(electronics)
+	
+	
+
+	//adding employes to managers
+	
+	steve.addToEmployees(Andy)
+	steve.addToEmployees(Keith)
+	jack.addToEmployees(Sara)
+	jack.addToEmployees(Keith)
+	
+	//adding team leaders to managers
+	
+	jack.addToTeam_leaders(Leader1)
+	steve.addToTeam_leaders(Leader2)
+
+	//adding employees to teamLeaders
+	
+	Leader1.addToEmployees(Andy)
+	Leader1.addToEmployees(Sara)
+	Leader2.addToEmployees(Keith)
+
+
+
+	//adding tasks to employees
+	
+	cleanShop.addToEmployees(Andy)
+	cleanShop.addToEmployees(Sara)
+	stackShelves.addToEmployees(Andy)
+	stackShelves.addToEmployees(Keith)
+
+	//adding shifts to tasks
+	cleanShop.addToShifts(eveningShift)
+	cleanShop.addToShifts(morningShift)
+	stackShelves.addToShifts(eveningShift)
 
     }
     def destroy = {

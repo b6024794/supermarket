@@ -9,6 +9,12 @@ class Manager {
 	String office
 	String department
 
+	String toString(){
+	
+	return fullName
+	
+	}
+
 	static hasMany = [employees:Employee, team_leaders:Team_leader]
 
     static constraints = {
