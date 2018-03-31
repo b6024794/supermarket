@@ -12,14 +12,25 @@ class HrSystemTagLib {
 			out << "</span><span style='float:right;margin-right:15px'>"
 
 			out << "<a href='${createLink(controller:'manager', action:'logout')}'>"
+			out << "Logout </a>"
+
+			out << "<a href='${createLink(controller:'team_leader', action:'logout')}'>"
 			out << "Logout </a></span>"
+
+
 		}
 		else{
 			out << "<span style='float:right;margin-right:10px'>"
 			out << "<a href='${createLink(controller:'manager', action:'login')}'>"
 			out << "Login </a></span>"
+
+			out << "<span style='float:right;margin-right:10px'>"
+			out << "<a href='${createLink(controller:'team_leader', action:'login')}'>"
+			out << "Login- Team leader </a></span>"
 			}
 			out << "</div><br/>"
 
 	}
+	
+
 }
