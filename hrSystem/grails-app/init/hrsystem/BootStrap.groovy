@@ -3,6 +3,7 @@ package com.agraham
 class BootStrap {
 
     def init = { servletContext ->
+/*
 
 //creating new shifts
 
@@ -225,7 +226,7 @@ def electronics = new Team(
 	cleanShop.addToShifts(eveningShift)
 	cleanShop.addToShifts(morningShift)
 	stackShelves.addToShifts(eveningShift)
-
+*/
     }
     def destroy = {
     }
