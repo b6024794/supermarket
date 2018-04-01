@@ -16,6 +16,7 @@ def validate(){
 		
 
 		session.user = user
+		session["job"] = "teamLeader"
 		render view:'home'
 		}
 	else{
@@ -33,6 +34,12 @@ def logout(){
 
 	redirect(uri:'/')
 
+	}
+
+def homepage (){
+
+	
+	render view:'home'
 	}
 	
 }

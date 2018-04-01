@@ -13,9 +13,9 @@ class ManagerController {
 def validate(){
 
 	def user = Manager.findByUserName(params.username)
-
 	if(user && user.password == params.password){
 
+		session["job"] = "manager"
 		
 
 		session.user = user
@@ -37,5 +37,14 @@ def logout(){
 	redirect(uri:'/')
 
 	}
+
+def homepage(){
+
+
+	render view:'home'
+
+}
 	
 }
+
+

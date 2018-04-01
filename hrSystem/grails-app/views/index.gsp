@@ -18,6 +18,8 @@
 			add and remove record about the shop
 		</p>
 
+
+	
 	<div class="login">
 		<g:loginToggle />
 
